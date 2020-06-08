@@ -1,7 +1,43 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: #0095b7;
+  color: #40514E;
 }
+
+/* <---------------HTML STYLES-------------------> */
+
+h1 {
+  font-family: 'Architects Daughter', cursive;
+  margin: 50px auto 50px auto;
+  font-size: 5rem;
+  }
+
+h2 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 2.5rem;
+  margin: 25px auto;
+  color: #0095b7;
+  }
+
+h3 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1.5rem;
+  color: #0095b7;
+  }
+
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: grey;
+    border-width: 5px;
+    width: 10%;
+    margin: 100px auto;
+ }
+
+ footer {
+   position: relative;
+   bottom: 10px;
+ }
 
 /*-----------------NAVIGATION BAR-------------------*/
 
@@ -107,6 +143,7 @@ body {
   top: 20px;
   right: 45px;
   font-size: 60px;
+  text-decoration: none !important;
 }
 
 @media (max-width: 999px) {
@@ -128,3 +165,26 @@ body {
 }
 
 /*-------------END OF NAV CODE-----------------*/
+
+.top-container {
+  background-color: #0095b7;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.name {
+  margin-top: 2%;
+}
+
+ .profession {
+   font-weight: normal;
+   color: white;
+ }
+
+ .computer_giphy {
+   width: 250px;
+   height: 250px;
+   margin: 10px auto;
+ }
