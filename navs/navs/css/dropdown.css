@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  position: absolute; /* Position of the whole nav section */
+  top: 0;
+  left: 0;
+  padding: 1% 10%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header .branding {
+  float: left; /* logo to the left */
+  padding-top: 5px;
+}
+
+header nav {
+  float: right; /* nav links to the right*/
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display links links next to each other */
+}
+
+header nav ul li {
+  list-style: none; /* Remove bullet points */
+  position: relative;
+}
+
+
+/* Drodown menu list*/
+header nav ul li.sub-menu:before {
+  content: '\f107'; /*font awesome drop-down icon code*/
+  font-family: fontAwesome;
+  position: absolute;
+  line-height: 50px;
+  right: 5px;
+}
+
+header nav ul li.active.sub-menu:before {
+content:'\f106'; /*font awesome up icon code*/
+}
+
+/* Drodown menu list*/
+header nav ul li ul {
+  position: absolute;
+  left: 0;
+  display: none; /*HIDES DROPDOWN*/
+}
+
+/* Drodown menu list*/
+header nav ul li ul li {
+  display: block;
+  width: 200px;
+}
+
+/* Drodown menu list*/
+header nav ul li.active ul {
+  display: block; /*SHOWS DROPDOWN*/
+}
+
+
+header nav ul li a {
+  display: block; /* link properties */
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #3c3c3b;
+}
+
+header nav ul li a:hover {
+  color: #737373;
+}
+
+header nav ul li a.active {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  float: right;
+  color: #3c3c3b;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Display none to then show with media query */
+}
+
+
+/*---------------------------------MEDIA QUERY------------------------------------*/
+
+@media (max-width: 900px)  {
+
+  /* Display hamburger menu - orignally display:none*/
+  .menu-toggle {
+    display: block;
+  }
+  /* Remove links at this width*/
+
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px); /* Viewport Height */
+    background-color: #3c3c3b;
+    top: 60px;
+    left: -100%;
+    transition: 0.5s;
+  }
+
+  header nav.active {
+    left: 0px;
+  }
+
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  header nav ul li a {
+    padding: 5px 20px;
+    color: white;
+    border-bottom: 0.2px solid #737373;
+  }
+
+  /*RESPOSNIVE DROPDOWN*/
+
+  header nav ul li.active ul {
+  position: relative;
+  background-color: grey;
+  }
+
+  header nav ul li.sub-menu:before {
+  color: white; /*Change color of icon*/
+  }
+
+  header nav ul li ul li {
+    width: 100%;
+  }
