@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sarabun', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute; /* Position of the whole nav section */
+  top: 0;
+  left: 0;
+  padding: 1% 10%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header .branding {
+  float: left; /* logo to the left */
+  padding-top: 5px;
+}
+
+header nav {
+  float: right; /* nav links to the right*/
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display links links next to each other */
+}
+
+header nav ul li {
+  list-style: none; /* Remove bullet points */
+  position: relative;
+}
+
+header nav ul li a {
+  display: block; /* link properties */
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #737370;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+header nav ul li a:hover {
+  color: #3c3c3b;
+}
+
+
+header nav ul li a.active { /* Active nav link*/
+  color: #3c3c3b;
+}
+
+.menu-toggle {
+  float: right;
+  color: #3c3c3b;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Display none to then show with media query */
+}
+
+
+/*-------------------------DROPDOWN MENU---------------------------*/
+
+  .dropdown-icon {
+    position: relative;
+    left: 12%;
+    bottom: 4%;
+    transition: 0.5s;
+    }
+
+/* Drodown menu list*/
+header nav ul li ul {
+  position: absolute;
+  left: 0;
+  display: none; /*HIDES DROPDOWN*/
+}
+
+/* Drodown menu list*/
+header nav ul li ul li {
+  display: block;
+  width: 200px;
+}
+
+/* Drodown menu list*/
+header nav ul li.active ul {
+  display: block; /*SHOWS DROPDOWN*/
+}
+
+header nav ul li.active ul a {
+  font-size: 0.85rem;
+}
+
+.myClass{
+  transform: rotate(180deg);
+  position: relative;
+  top: 10%;
+}
+
+
+/*---------------------------------MEDIA QUERY------------------------------------*/
+
+@media (max-width: 900px)  {
+
+  /* Display hamburger menu - orignally display:none*/
+  .menu-toggle {
+    display: block;
+  }
+  /* Remove links at this width*/
+
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px); /* Viewport Height */
+    background-color: white;
+    top: 60px;
+    right: -100%;
+    transition: 0.5s;
+  }
+
+  header nav.active {
+    right: 0;
+  }
+
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  header nav ul li a {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    margin: 0 25%;
+  }
+
+  /*RESPOSNIVE DROPDOWN*/
+
+  header nav ul li.active ul {
+  position: relative;
+  margin: 0;
+  border-top: solid 0.1px #737370;
+  border-bottom: solid 0.1px #737370;
+  }
+
+  header nav ul li.active ul a {
+  position: relative;
+  font-size: 0.9rem;
+  }
+
+  .dropdown-icon {
+    position: relative;
+    left: 2%;
+  }
+
+  header nav ul li ul li {
+    width: 100%;
+  }
+
+  header nav ul {
+    margin: 25% 0;
+    transition: 0.5s;
+  }
+
+  .myClass2 {
+  margin: 0;
+  transition: 0.5s;
+  }
+
+}
