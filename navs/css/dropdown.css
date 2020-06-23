@@ -6,21 +6,16 @@ body {
 }
 
 header {
-  position: absolute; /* Position of the whole nav section */
-  top: 0;
-  left: 0;
-  padding: 1% 10%;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 2% 10%;
 }
 
-header .branding {
-  float: left; /* logo to the left */
-  padding-top: 5px;
+header .branding{
+display: inline-block;
 }
 
 header nav {
-  float: right; /* nav links to the right*/
+display: inline-block;
+float: right;
 }
 
 header nav ul {
@@ -77,7 +72,7 @@ header nav ul li a.active { /* Active nav link*/
 header nav ul li ul {
   position: absolute;
   left: 0;
-  display: none; /*HIDES DROPDOWN*/
+  opacity: 0;
 }
 
 /* Drodown menu list*/
@@ -89,6 +84,8 @@ header nav ul li ul li {
 /* Drodown menu list*/
 header nav ul li.active ul {
   display: block; /*SHOWS DROPDOWN*/
+  opacity: 1;
+  transition: 0.5s;
 }
 
 header nav ul li.active ul a {
@@ -100,7 +97,6 @@ header nav ul li.active ul a {
   position: relative;
   top: 10%;
 }
-
 
 /*---------------------------------MEDIA QUERY------------------------------------*/
 
@@ -118,12 +114,12 @@ header nav ul li.active ul a {
     height: calc(100vh - 50px); /* Viewport Height */
     background-color: white;
     top: 60px;
-    right: -100%;
+    right: 0;
     transition: 0.5s;
   }
 
   header nav.active {
-    right: 0;
+  right: -100%;
   }
 
   header nav ul {
@@ -133,7 +129,7 @@ header nav ul li.active ul a {
 
   header nav ul li a {
     padding: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0 25%;
   }
 
@@ -142,13 +138,11 @@ header nav ul li.active ul a {
   header nav ul li.active ul {
   position: relative;
   margin: 0;
-  border-top: solid 0.1px #737370;
-  border-bottom: solid 0.1px #737370;
   }
 
   header nav ul li.active ul a {
   position: relative;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   }
 
   .dropdown-icon {
@@ -161,13 +155,44 @@ header nav ul li.active ul a {
   }
 
   header nav ul {
-    margin: 25% 0;
-    transition: 0.5s;
+    margin: 20% 0; /*FIX NEEDS TO BE IN THE MIDDLE*/
+  }
+
+  .sub-menu-items {
+    display: none;
+  }
+
+  .sub-menu-items .active {
+    display: block;
   }
 
   .myClass2 {
   margin: 0;
   transition: 0.5s;
+  opacity: 1;
   }
 
+  .overflow{
+    overflow: hidden;
+  }
+
+}
+
+/*---------------------------------LANDING PAGE------------------------------------*/
+
+.landing-container {
+  z-index: -1;
+  background-color: red;
+  text-align: center;
+  padding: 10% 0;
+  font-size: 1.5rem;
+}
+
+
+/*---------------------------------MIDDLE PAGE------------------------------------*/
+
+.middle-container {
+  z-index: -1;
+  background-color: grey;
+  padding: 20% 0;
 }
